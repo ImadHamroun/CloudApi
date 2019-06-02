@@ -1,0 +1,335 @@
+﻿swagger: '2.0'
+host: cloud-api-240009.appspot.com
+info:
+  version: v1
+  title: CloudApi
+paths:
+  '/api/v1/boxers/{id}':
+    get:
+      tags:
+        - Boxer
+      operationId: getBoxer
+      consumes: []
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Boxer'
+    delete:
+      tags:
+        - Boxer
+      operationId: removeBoxer
+      consumes: []
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  '/api/v1/boxers/{id}/results':
+    get:
+      tags:
+        - Boxer
+      operationId: getboxerResults
+      consumes: []
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Result'
+  /api/v1/boxers:
+    get:
+      tags:
+        - Boxer
+      operationId: getAllBoxers
+      consumes: []
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters:
+        - name: Weightclass
+          in: query
+          required: false
+          type: string
+        - name: page
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: sort
+          in: query
+          required: false
+          type: string
+        - name: dir
+          in: query
+          required: false
+          type: string
+        - name: length
+          in: query
+          required: false
+          type: integer
+          format: int32
+          default: 2
+      responses:
+        '200':
+          description: Success
+          schema:
+            uniqueItems: false
+            type: array
+            items:
+              $ref: '#/definitions/Boxer'
+    put:
+      tags:
+        - Boxer
+      operationId: updateBoxer
+      consumes:
+        - application/json-patch+json
+        - application/json
+        - text/json
+        - application/*+json
+      produces: []
+      parameters:
+        - name: boxer
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Boxer'
+      responses:
+        '200':
+          description: Success
+    post:
+      tags:
+        - Boxer
+      operationId: addBoxer
+      consumes:
+        - application/json-patch+json
+        - application/json
+        - text/json
+        - application/*+json
+      produces: []
+      parameters:
+        - name: bxr
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Boxer'
+      responses:
+        '200':
+          description: Success
+  /api/v1/results:
+    get:
+      tags:
+        - Results
+      operationId: getResults
+      consumes: []
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters: []
+      responses:
+        '200':
+          description: Success
+          schema:
+            uniqueItems: false
+            type: array
+            items:
+              $ref: '#/definitions/Result'
+    post:
+      tags:
+        - Results
+      operationId: addNewResults
+      consumes: []
+      produces: []
+      parameters: []
+      responses:
+        '200':
+          description: Success
+  '/api/v1/results/{id}':
+    get:
+      tags:
+        - Results
+      operationId: getResult
+      consumes: []
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Result'
+    put:
+      tags:
+        - Results
+      operationId: UpdateResult
+      consumes: []
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  /api/Values:
+    get:
+      tags:
+        - Values
+      operationId: Get
+      consumes: []
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters: []
+      responses:
+        '200':
+          description: Success
+          schema:
+            uniqueItems: false
+            type: array
+            items:
+              type: string
+    post:
+      tags:
+        - Values
+      operationId: Post
+      consumes:
+        - application/json-patch+json
+        - application/json
+        - text/json
+        - application/*+json
+      produces: []
+      parameters:
+        - name: value
+          in: body
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+  '/api/Values/{id}':
+    put:
+      tags:
+        - Values
+      operationId: Put
+      consumes:
+        - application/json-patch+json
+        - application/json
+        - text/json
+        - application/*+json
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+        - name: value
+          in: body
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+    delete:
+      tags:
+        - Values
+      operationId: Delete
+      consumes: []
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+definitions:
+  Boxer:
+    type: object
+    properties:
+      id:
+        format: int32
+        type: integer
+      bijnaam:
+        type: string
+      gewichtsklasse:
+        type: string
+      lengte:
+        format: double
+        type: number
+      bereik:
+        format: double
+        type: number
+      nationaliteit:
+        type: string
+      geboortedatum:
+        format: date-time
+        type: string
+      geboorteland:
+        type: string
+      geboorteplaats:
+        type: string
+      results:
+        $ref: '#/definitions/Result'
+  Result:
+    type: object
+    properties:
+      id:
+        format: int32
+        type: integer
+      aantalGevechten:
+        format: int32
+        type: integer
+      overwinningen:
+        format: int32
+        type: integer
+      knockouts:
+        format: int32
+        type: integer
+      gelijk:
+        format: int32
+        type: integer
+      verloren:
+        format: int32
+        type: integer

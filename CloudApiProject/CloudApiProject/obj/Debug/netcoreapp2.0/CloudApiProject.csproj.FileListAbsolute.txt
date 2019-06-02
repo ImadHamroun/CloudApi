@@ -1,0 +1,12 @@
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\bin\Debug\netcoreapp2.0\CloudApiProject.deps.json
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\bin\Debug\netcoreapp2.0\CloudApiProject.runtimeconfig.json
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\bin\Debug\netcoreapp2.0\CloudApiProject.runtimeconfig.dev.json
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\bin\Debug\netcoreapp2.0\CloudApiProject.dll
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\bin\Debug\netcoreapp2.0\CloudApiProject.pdb
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\obj\Debug\netcoreapp2.0\CloudApiProject.csprojResolveAssemblyReference.cache
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\obj\Debug\netcoreapp2.0\CloudApiProject.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\obj\Debug\netcoreapp2.0\CloudApiProject.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\obj\Debug\netcoreapp2.0\CloudApiProject.AssemblyInfo.cs
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\obj\Debug\netcoreapp2.0\CloudApiProject.dll
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\obj\Debug\netcoreapp2.0\CloudApiProject.pdb
+C:\Users\PC\source\repos\CloudApiProject\CloudApiProject\bin\Debug\netcoreapp2.0\app.yml
